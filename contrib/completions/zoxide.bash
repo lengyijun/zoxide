@@ -208,6 +208,13 @@ _zoxide() {
                     fi
                     return 0
                     ;;
+                --basedir)
+                    COMPREPLY=()
+                    if [[ "${BASH_VERSINFO[0]}" -ge 4 ]]; then
+                        compopt -o plusdirs
+                    fi
+                    return 0
+                    ;;
                 *)
                     COMPREPLY=()
                     ;;
